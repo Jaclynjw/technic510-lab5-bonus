@@ -1,21 +1,25 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBx6q9Qpa0VV8iz0HiEnmmSdTG0Y6znQ7s",
-    authDomain: "todo-app-32aa4.firebaseapp.com",
-    projectId: "todo-app-32aa4",
-    storageBucket: "todo-app-32aa4.appspot.com",
-    messagingSenderId: "346291524664",
-    appId: "1:346291524664:web:7ed14f3f0a85af87f3c2cd",
-    measurementId: "G-TR3H6RBL27"
+  apiKey: "AIzaSyBx69qQPawOVBi2oHiEnmmSdIGDY6znQ7s",
+  authDomain: "todo-app-32aa4.firebaseapp.com",
+  databaseURL: "https://todo-app-32aa4-default-rtdb.firebaseio.com",
+  projectId: "todo-app-32aa4",
+  storageBucket: "todo-app-32aa4.appspot.com",
+  messagingSenderId: "346291524664",
+  appId: "1:346291524664:web:7ed14f3f0a85af87f3c2cd",
+  measurementId: "G-TR3H6RBL27"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const analytics = getAnalytics(app);
 
 // Function to add a todo to Firestore
 function addTodo() {
